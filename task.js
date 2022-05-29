@@ -19,7 +19,7 @@ document.getElementById('form').addEventListener('submit', (e) => {
         }
     }
 
-    // так-как "e.total" на 17 строке равно нулю, а "e.lengthComputable = false"
+    // так как "e.total" на 17 строке равно нулю, а "e.lengthComputable = false"
     // заполняем прогрессбар на 100% по факту завершения загрузки
     downloadFile.addEventListener('readystatechange', () => {
         if (downloadFile.readyState === downloadFile.DONE) {
