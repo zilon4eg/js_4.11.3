@@ -21,11 +21,11 @@ document.getElementById('form').addEventListener('submit', (e) => {
 
     // так как "e.total" на 17 строке равно нулю, а "e.lengthComputable = false"
     // заполняем прогрессбар на 100% по факту завершения загрузки
-    downloadFile.addEventListener('readystatechange', () => {
+    downloadFile.onload = () => {
         if (downloadFile.readyState === downloadFile.DONE) {
             progress.value = 1.0;
         }
-    });
+    }
 
     downloadFile.open('POST', 'https://netology-slow-rest.herokuapp.com/upload.php');
     var formData = new FormData(document.getElementById('form'));
